@@ -13,9 +13,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
-@media screen and (max-width :450px) {
-    #box-heading{
-        @apply w-[150px]
-    }
+/* .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+} */
+/* .slider::-webkit-slider-thumb {
+    @apply bg-blue-600 appearance-none h-[17px] w-[17px] cursor-pointer rounded-full
 }
+
+.slider::-moz-range-thumb {
+    @apply bg-blue-600 appearance-none h-[17px] w-[17px] cursor-pointer rounded-full
+} */

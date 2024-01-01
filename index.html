@@ -7,51 +7,119 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-    <div id="wrapper" class="h-[100vh] w-full bg-[url('img/lightbackground.webp')] dark:bg-[url('img/darkbackground.png')] bg-cover flex justify-center items-center font-sans overflow-hidden">
-        <div id="box" class="w-[700px] h-[500px] bg-[#ffffff60] dark:bg-[#00000060] backdrop-blur-xl rounded-2xl border border-white dark:border-black sm:px-12 px-5 py-10">
+    <div id="wrapper" class="h-[100vh] w-full bg-[url('img/lightbackground.webp')] dark:bg-[url('img/darkbackground.png')] bg-cover flex justify-center items-center font-sans overflow-hidden box-border">
+
+        <!-- box -->
+
+        <div id="box" class="md:w-[700px] w-[100vw] h-[500px] bg-[#ffffff60] dark:bg-[#00000060] backdrop-blur-xl rounded-2xl border border-white dark:border-black sm:px-12 px-5 py-10 ">
+
+            <!-- box header -->
+
             <div id="box-header" class="flex justify-between">
-                <h3 id="box-heading" class="text-3xl font-light dark:text-white">Password Generator</h3>
+                <h3 id="box-heading" class="text-4xl sm:w-auto w-[150px] font-light dark:text-white">Password Generator</h3>
                 <div class="flex flex-col gap-2 sm:mr-5 mr-0 mb-5">
                     <label class="relative flex items-center cursor-pointer">
-                        <input type="checkbox" value="" class="sr-only peer">
-                        <div class="w-7 h-4 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full  peer-checked:after:border-white after:absolute after:top-1 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                        <input id="advance-btn" type="checkbox" value="" class="sr-only peer">
+                        <div class="w-7 h-4 bg-gray-200 border border-gray-300 rounded-full peer peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-gray-700 dark:bg-gray-700 peer-checked:after:translate-x-full  peer-checked:after:border-white after:absolute after:top-1 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                         <span class="ms-3 text-sm font-medium text-black dark:text-white ">Advance</span>
                     </label>
                     <label class="relative flex items-center cursor-pointer">
                         <input id="dark-btn" type="checkbox" value="" class="sr-only peer">
-                        <div class="w-7 h-4 bg-gray-200 rounded-full peer peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 dark:bg-gray-700 peer-checked:after:translate-x-full  peer-checked:after:border-white after:absolute after:top-1 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
+                        <div class="w-7 h-4 bg-gray-200 border border-gray-300 rounded-full peer peer-focus:ring-2 peer-focus:ring-blue-300 dark:peer-focus:ring-gray-700 dark:bg-gray-700 peer-checked:after:translate-x-full  peer-checked:after:border-white after:absolute after:top-1 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-3 after:w-3 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                         <span class="ms-3 text-sm font-medium text-black dark:text-white">Dark Mode</span>
                     </label>
                 </div>
             </div>
+
+            <!-- box main -->
+
             <div id="box-main" class="m-4 dark:text-white">
                 <div class="flex justify-between">
                     <h3 class="dark:text-white">Length</h3>
-                    <input type="number" value="0" min="0" max="20" class="w-[50px] text-lg border rounded-md opacity-70 dark:bg-black dark:border-gray-700 dark:text-white focus:ring-blue-300 focus:outline-none text-center">
+                    <input type="number" value="1" min="1" max="50" class="w-[50px] text-lg border rounded-md opacity-70 dark:bg-black dark:border-gray-700 dark:text-white focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-700 focus:outline-none text-center" data-lengthNumber>
                     <!-- <p type="text" value="0" class="w-[50px] h-[30px] bg-white relative bottom-0.5 text-lg border rounded-md opacity-70 dark:bg-black dark:border-gray-700 dark:text-white focus:ring-blue-300 focus:outline-none text-center">0</p> -->
                 </div>
-                <input type="range" min="0" max="20" value="0" class="w-full h-2 bg-white rounded-lg appearance-none cursor-pointer dark:bg-gray-700">
-                <div>
-                    <label class="block my-3">
-                        <input type="checkbox" name="" id="" > Numbers <span class="text-gray-600 dark:text-gray-400">(0-9)</span>
-                    </label>
-                    <label class="block my-3">
-                        <input type="checkbox" name="" id="" > Small Letters <span class="text-gray-600 dark:text-gray-400">(a-z)</span>
-                    </label>
-                    <label class="block my-3">
-                        <input type="checkbox" name="" id="" > Capital Letters <span class="text-gray-600 dark:text-gray-400">(A-Z)</span>
-                    </label>
-                    <label class="block my-3">
-                        <input type="checkbox" name="" id="" > Symbols <span class="text-gray-600 dark:text-gray-400">(!@#$%^&*-_;:...)</span>
-                    </label>
+                <div class="group">
+                    <input type="range" min="1" max="50" value="1" step="1" class="w-full h-2 bg-white rounded-lg appearance-none slider cursor-pointer dark:bg-gray-600
+                    [&::-webkit-slider-thumb]:w-4
+                    [&::-webkit-slider-thumb]:h-4
+                    [&::-webkit-slider-thumb]:appearance-none
+                    [&::-webkit-slider-thumb]:bg-blue-700
+                    dark:[&::-webkit-slider-thumb]:bg-blue-600
+                    group-focus-within:[&::-webkit-slider-thumb]:outline
+                    [&::-webkit-slider-thumb]:outline-1
+                    [&::-webkit-slider-thumb]:outline-white
+                    dark:[&::-webkit-slider-thumb]:outline-black
+                    group-focus-within:[&::-webkit-slider-thumb]:shadow-[0_0_0_4px_#00000040]
+                    group-focus-within:dark:[&::-webkit-slider-thumb]:shadow-[0_0_0_4px_#ffffff40]
+                    [&::-webkit-slider-thumb]:rounded-full
+                    [&::-moz-range-thumb]:w-4
+                    [&::-moz-range-thumb]:h-4
+                    [&::-moz-range-thumb]:appearance-none
+                    [&::-moz-range-thumb]:bg-blue-700
+                    dark:[&::-moz-range-thumb]:bg-blue-600
+                    group-focus-within:[&::-moz-range-thumb]:outline
+                    [&::-moz-range-thumb]:outline-1
+                    [&::-moz-range-thumb]:outline-white
+                    dark:[&::-moz-range-thumb]:outline-black
+                    group-focus-within:[&::-moz-range-thumb]:shadow-[0_0_0_4px_#00000040]
+                    group-focus-within:dark:[&::-moz-range-thumb]:shadow-[0_0_0_4px_#ffffff40]
+                    [&::-moz-range-thumb]:rounded-full
+                    " data-lengthSlider>
                 </div>
-                <button class="w-full text-center text-lg bg-blue-700 text-white py-2 rounded-lg hover:bg-blue-800 dark:bg-blue-600 my-3">Generate</button>
-                <div class="w-full h-[60px] text-center text-lg bg-gray-200 border border-gray-500 py-2 rounded-lg dark:bg-gray-600 flex justify-center items-center text-gray-800 dark:text-gray-300">
-                    Click on the Generate button
+
+                <!-- check box -->
+
+                <div>
+                    <label class="block mt-3">
+                        <input type="checkbox" name="" id="checkNumber" checked> Numbers <span class="text-gray-600 dark:text-gray-400">(0-9)</span>
+                    </label>
+                    <div class="hidden advhidden flex">
+                        <input id="possibleNumber" type="text" name="" value="0123456789" class="my-1 mx-4 w-[400px] rounded-md p-1 text-sm border focus:outline-none focus:ring-[1px] focus:ring-blue-600 disabled:border-gray-400 disabled:bg-transparent dark:bg-black dark:border-gray-500 dark:disabled:bg-transparent dark:disabled:border-gray-600">
+                        <i class="fa-solid fa-arrows-rotate relative top-3"></i>
+                    </div>
+                    <label class="block mt-3">
+                        <input type="checkbox" name="" id="checkLowerAlpha" > Small Letters <span class="text-gray-600 dark:text-gray-400">(a-z)</span>
+                    </label>
+                    <div class="hidden advhidden flex">
+                        <input id="possibleLowerAlpha" type="text" name="" value="abcdefghijklmnopqrstuvwxyz" class="my-1 mx-4 w-[400px] rounded-md p-1 text-sm border focus:outline-none focus:ring-[1px] focus:ring-blue-600 disabled:border-gray-400 disabled:bg-transparent dark:bg-black dark:border-gray-500 dark:disabled:bg-transparent dark:disabled:border-gray-600" disabled>
+                        <i class="fa-solid fa-arrows-rotate relative top-3"></i>
+                    </div>
+                    <label class="block mt-3">
+                        <input type="checkbox" name="" id="checkUpperAlpha" > Capital Letters <span class="text-gray-600 dark:text-gray-400">(A-Z)</span>
+                    </label>
+                    <div class="hidden advhidden flex">
+                        <input id="possibleUpperAlpha" type="text" name="" value="ABCDEFGHIJKLMNOPQRSTUVWXYZ" class="my-1 mx-4 w-[400px] rounded-md p-1 text-sm border focus:outline-none focus:ring-[1px] focus:ring-blue-600 disabled:border-gray-400 disabled:bg-transparent dark:bg-black dark:border-gray-500 dark:disabled:bg-transparent dark:disabled:border-gray-600" disabled>
+                        <i class="fa-solid fa-arrows-rotate relative top-3"></i>
+                    </div>
+                    <label class="block mt-3">
+                        <input type="checkbox" name="" id="checkSymbol" > Special Characters <span class="text-gray-600 dark:text-gray-400">(!@#$%^&*-_;:...)</span>
+                    </label>
+                    <div class="hidden advhidden flex">
+                        <input id="possibleSymbol" type="text" name="" value="~`!@#$%^&*()_-+={[]}|:;<,>.?/" class="my-1 mx-4 w-[400px] rounded-md p-1 text-sm border focus:outline-none focus:ring-[1px] focus:ring-blue-600 disabled:border-gray-400 disabled:bg-transparent dark:bg-black dark:border-gray-500 dark:disabled:bg-transparent dark:disabled:border-gray-600" disabled>
+                        <i class="fa-solid fa-arrows-rotate relative top-3"></i>
+                    </div>
+                </div>
+
+                <!-- button  -->
+
+                <button id="generateBtn" class="w-full text-center text-lg bg-blue-700 text-white py-2 rounded-lg hover:bg-blue-800 dark:bg-blue-600 my-3">Generate</button>
+                <div class="w-full h-[60px] text-center text-lg bg-gray-200 border border-gray-500 py-2 px-4 rounded-lg dark:bg-gray-600 flex justify-center items-center text-gray-800 dark:text-gray-300 relative">
+                    <div id="preText" class="">
+                        Click on the Generate button
+                    </div>
+                    <div id="textToCopy" class="hover:bg-white text-sm items-center justify-center h-7 w-full text-center dark:hover:bg-gray-500 rounded-md transition-all ease-in-out duration-500 pointer-events-none hidden
+                    ">
+                        
+                    </div>
+                    <div id="copiedDisplay" class="text-sm absolute -right-5 top-0 bg-blue-600 text-white p-1 rounded-md hidden scale-0 transition-all duration-500 ease-in-out">
+                        Copied
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+    <script src="https://kit.fontawesome.com/418a283835.js" crossorigin="anonymous"></script>
     <script src="script.js" type="module"></script>
 </body>
 </html>
